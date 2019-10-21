@@ -1,13 +1,13 @@
 const sendSms = document.getElementById('send-sms');
 
 sendSms.addEventListener('click', ()=>{
-  fetch('https://amda-amazon.herokuapp.com/send-sms', {
+  fetch('http://localhost:8084/send-sms', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     dataType: 'json',
-    mode: 'no-cors',
+    //mode: 'no-cors',
     body: JSON.stringify({
       data: {
         comunity: [
