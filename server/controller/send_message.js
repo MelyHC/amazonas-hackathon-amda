@@ -12,7 +12,7 @@ const validate_message = (req, res, callback) => {
   console.log('Controller: validate_message');
 
   const body = req.body;
-  console.log(req);
+  console.log(req.body);
 
   if (body == undefined || body.data == undefined) {
     const resp = new Respuesta(1, 'Error body o data no definidos', req);
