@@ -1,7 +1,7 @@
 const sendSms = document.getElementById('send-sms');
 
 sendSms.addEventListener('click', ()=>{
-  fetch('http://localhost:8084/send-sms', {
+  fetch('https://amda-amazon.herokuapp.com/send-sms', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
