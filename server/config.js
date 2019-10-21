@@ -1,5 +1,5 @@
 const config = {
-  port: 8084,
+  port: process.env.PORT || 8084,
   allowedOrigins: [
     'http://127.0.0.1:5501',
     'http://localhost:5501',

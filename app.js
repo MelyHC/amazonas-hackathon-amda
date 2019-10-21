@@ -7,6 +7,7 @@ sendSms.addEventListener('click', ()=>{
       'Content-Type': 'application/json'
     },
     dataType: 'json',
+    mode: 'no-cors',
     body: JSON.stringify({
       data: {
         comunity: [
