@@ -8,7 +8,160 @@
     <link rel="stylesheet" href="./style/home.css">
   </head>
   <body>
-    <button id="send-sms">Enviar sms</button>
+
+      <div class="container">
+          <div class="scroll">
+              <header>
+                  <!-- <p>REGISTRO</p> -->
+              </header>
+              <div>
+                  <div class="container-sections">
+                      <div class="sections">
+                          <div class="section3">
+                              <div class="div_general">
+                                  <div class="div_form">
+                                      <h3 class="title">REGISTRO DE CERTIFICACIONES AMBIENTALES</h3>
+                                      <br>
+                                      <form action="/action_page.php" class="form_style">
+                                          <h3 class="subtitle">Nombre del proyecto:</h3>
+                                          <br>
+  
+                                          <input id="input-text" class="input_info" type="text" name="firstname" value=""><br>
+  
+                                          <br>
+                                          <hr>
+                                          <br>
+                                          <h3 class="subtitle">Tipo de IGA</h3>
+                                          <br>
+                                          <select class="input_info">
+                                              <option value="volvo">Estudio de Impacto Ambiental</option>
+                                              <option value="saab">Saab</option>
+                                              <option value="mercedes">Mercedes</option>
+                                              <option value="audi">Audi</option>
+                                          </select>
+  
+                                          <!-- <input class="input_info" type="text" name="lastname" value="Mouse"><br> -->
+  
+                                      </form>
+                                  </div>
+                                  <div class="div_form2">
+                                      <h3 class="title">SELECCION DE COMUNIDAD Y AGENDAMIENTO</h3>
+                                      <div class="div_one" style="background_color: pink">
+                                          <div class="div_column">
+                                              <br>
+                                              <h3 class="subtitle" style="text-align: left; margin-left: 5px">Comunidad
+                                              </h3>
+                                              <BR>
+                                              <!-- <input class="input_info" type="text" name="lastname" value=""><br><br> -->
+    <div class="autocomplete" style="width:300px;">
+      <input  class="input_info" id="myInput" type="text" name="myCountry" placeholder="Country">
+    </div>
+  
+    
+                                          </div>
+                                          <div class="div_column">
+                                              <br>
+                                              <h3 class="subtitle" style="text-align: left; margin-left: 5px"> Contacto
+                                              </h3>
+                                              <BR>
+                                              <input class="input_info" type="text" name="lastname"
+                                                  value=" Agregar Numero"><br><br>
+  
+                                          </div>
+                                      </div>
+  
+                                      <hr>
+  
+                                      <div class="div_one" style="background_color: pink">
+                                          <div class="div_column">
+                                              <br>
+                                              <h3 class="subtitle" style="text-align: left; margin-left: 5px">Audiencias
+                                              </h3>
+                                              <br>
+                                              <input class="input_info2" type="text" name="lastname"
+                                                  value="Mouse"><br><br>
+                                              <h3 class="subtitle" style="text-align: left; margin-left: 5px">Talleres
+                                              </h3>
+                                              <br>
+                                              <input class="input_info2" type="text" name="lastname"
+                                                  value="Mouse"><br><br>
+                                          </div>
+                                          <div class="div_column ">
+                                              <div class="div_one">
+                                                  <div class="div_column2">
+                                                      <br>
+                                                      <h3 class="subtitle" style="text-align: left; margin-left: 5px">
+                                                          Fecha</h3>
+                                                      <br>
+                                                      <input id="input_fecha" class="input_info2" type="date" id="start" name="trip-start"
+                                                          value="2019-10-23" min="2019-10-23" max="2021-12-31">
+                                                      <br><br>
+  
+                                                  </div>
+                                                  <div class="div_column2">
+                                                      <br>
+                                                      <h3 class="subtitle" style="text-align: left; margin-left: 5px">Hora
+                                                      </h3>
+                                                      <br>
+                                                      <input id="input_hora"class="input_info2" type="time" name="usr_time">
+                                                      <br><br>
+                                                  </div>
+                                              </div>
+  
+                                              <div id="btnText" class="div_btn">
+                                                  <input class="btn_input" type="submit" value="Guardar">
+                                              </div>
+                                          </div>
+                                      </div>
+  
+                                      <br>
+                                      </form>
+                                  </div>
+  
+  
+                                  <div class="div_form4">
+                                      <h3 class="title">COMUNIDADES INVOLUCRADAS
+                                      </h3>
+  
+                                      <div class="div_form3" id="rsp_card">
+                                          <!-- <div class="card">
+                                              <br>
+                                              <span class="comunidad">Parinari</span> <span class="hab">440 Hab</span>
+                                          </div>
+                                          <div class="card">
+                                              <br>
+                                              <span class="comunidad">Parinari</span> <span class="hab">440 Hab</span>
+                                          </div>
+                                          <div class="card">
+                                              <br>
+                                              <span class="comunidad">Parinari</span> <span class="hab">440 Hab</span>
+                                          </div> -->
+                                      </div>
+                                      <!-- <div class="div_form3">
+                                          <div class="card">
+                                              hola sandra son boros
+                                          </div>
+                                          <div class="card">
+                                              hola sandra son boros
+                                          </div>
+                                          <div class="card">
+                                              hola sandra son boros
+                                          </div>
+                                      </div> -->
+                                  </div>
+  
+                              </div>
+                          </div>
+                          <br>
+                      </div>
+  
+                      <div class="div_btn">
+                          <input id="send-sms" class="btn_input4" type="submit" value="Enviar y Guardar">
+                      </div>
+                  </div>
+              </div>
+    <!-- <button id="send-sms">Enviar sms</button> -->
+    <script src="index.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>
