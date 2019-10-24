@@ -300,6 +300,7 @@ hr{
 .div_btn{
 
     display: block;
+    width: 86%;
 }
 .btn_input{
     background-color: #52BB1E;
@@ -375,10 +376,10 @@ font-weight: 500;
 .btn_input4{
     background-color: #52BB1E;
     border-radius: 4px;
-    width: 429px;
+    width: 48%;
     height: 50px;
     color: white;
-    margin-left: 42% ;
+    margin-left: 52% ;
     margin-bottom: 100px;
 }
 
