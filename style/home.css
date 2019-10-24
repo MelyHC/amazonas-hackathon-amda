@@ -367,8 +367,9 @@ font-weight: 500;
     background-color: #FFFFFF;
   border: 1px solid rgba(46, 91, 255, 0.08);
   border-radius: 5px;
-  width: 264px;
-  height: 60px;
+  width: 33%;
+  padding: 0px 10px 10px 10px;
+  
 }
 
 
