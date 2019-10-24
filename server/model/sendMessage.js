@@ -1,14 +1,10 @@
 const twilio = require('twilio');
 const Response = require('../res-message');
 
-const { key_twilio, pass_twilio, phone_send, prefix } = require('../config');
-const client = new twilio(key_twilio, pass_twilio);
+const { TWILIO_KEY, TWILIO_PASS, PHONE } = process.env;
+const { prefix } = require('../config');
 
-var Respuesta = function (resp_cod, resp_msg, data) {
-  this.resp_cod = resp_cod;
-  this.resp_msg = resp_msg;
-  this.data = data;
-};
+const client = new twilio(TWILIO_KEY, TWILIO_PASS);
 
 const sendSms = (req, res) => {
   console.log('Model: sendSMS');
@@ -20,20 +16,19 @@ const sendSms = (req, res) => {
 
     client.messages.create({
       to: `${prefix}${phone}`,
-      from: phone_send,
+      from: PHONE,
       body: `${language[`${motive}`]}
   ${language.date}: ${dateR}
   ${language.hour}: ${hourR}
   ${language.place} ${nameComunity}
   ${language.proyect} ${proyectName}
-  ${language.return} ${phone_send}`
-    }).then(message => { 
-      console.log(message) 
+  ${language.return} ${PHONE}`
+    }).then(message => {
+      console.log(message)
     });
   });
-  const resp = new Respuesta(0, 'Se envio correctamente el mensaje', []);
+  const resp = Response(0, 'Se envio correctamente el mensaje', []);
   res.send(JSON.stringify(resp));
 }
-//arrUser.forEach(({ phone, name }) => sendSms(phone, name));
 
 module.exports.sendSms = sendSms;
