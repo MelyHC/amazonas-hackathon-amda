@@ -124,7 +124,7 @@ const btn = document.getElementById('btnInput')
 const input = document.getElementById('myInput')
 const comuinput = document.getElementById('comuInput')
 
-git git 
+
       const inputText = document.getElementById("input-text");
       const btnText = document.getElementById("btnText");
       const newSub= document.getElementById("newSubTitle");
