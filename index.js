@@ -150,10 +150,29 @@ const comuinput = document.getElementById('comuInput')
         console.log(name_comunidad.value);
 
           console.log(inputComun);
-          namecard.innerHTML= ` <div class="card" ><br>
-          <span class="comunidad">${inputComun}</span> <br><span class="hab">440 Hab</span><br>Fecha:${inputFecha}
-            <br>Hora:${inputHora}</div>}`;  
-       newSub.innerHTML="COMUNIDADES INVOLUCRADAS " + inputString;
+
+
+          var card = document.createElement('DIV')
+          card.setAttribute('class', "card")
+          var span1 = document.createElement ( 'p')
+          span1.setAttribute('class','comunidad')
+          var span2 = document.createElement ( 'p')
+          span2.setAttribute('class', "fecha")
+          var span3 = document.createElement ( 'p')
+          span3.setAttribute('class', "hora")
+      
+          span1.innerHTML =  `${inputComun}`
+          span2.innerHTML = `Fecha: ${inputFecha}`
+          span3.innerHTML = `Hora: ${inputHora}`
+          namecard.appendChild(card);
+          card.appendChild( span1);
+          card.appendChild( span2);
+          card.appendChild( span3);
+
+    //       namecard.innerHTML= ` <div class="card" ><br>
+    //       <span class="comunidad">${inputComun}</span> <br><span class="hab">440 Hab</span><br>Fecha:${inputFecha}
+    //         <br>Hora:${inputHora}</div>}`;  
+    //    newSub.innerHTML="COMUNIDADES INVOLUCRADAS " + inputString;
        
 
       };
