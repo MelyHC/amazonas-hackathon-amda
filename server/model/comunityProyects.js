@@ -49,10 +49,14 @@ const pullProyect = (req, res) => {
     .then((snapshot) => {
       snapshot.forEach((doc) => {
         console.log(doc.id, '=>', doc.data());
+        const resp = Response(0, 'Proyectos guardados', doc.data());
+        res.send(JSON.stringify(resp));
       });
     })
     .catch((err) => {
       console.log('Error getting documents', err);
+      const resp = Response(1, 'Error no se pudo traer los datos', err);
+      res.send(JSON.stringify(resp));
     });
 
 }
