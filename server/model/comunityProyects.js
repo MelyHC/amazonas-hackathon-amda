@@ -47,11 +47,15 @@ const pullProyect = (req, res) => {
 
   db.collection('proyects').get()
     .then((snapshot) => {
+      const data = [];
+      
       snapshot.forEach((doc) => {
         console.log(doc.id, '=>', doc.data());
-        const resp = Response(0, 'Proyectos guardados', doc.data());
-        res.send(JSON.stringify(resp));
+
+        data.push(doc.data());
       });
+      const resp = Response(0, 'Proyectos guardados', data);
+      res.send(JSON.stringify(resp));
     })
     .catch((err) => {
       console.log('Error getting documents', err);
