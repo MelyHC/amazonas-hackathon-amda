@@ -8,9 +8,9 @@ const client = new twilio(TWILIO_KEY, TWILIO_PASS);
 
 const sendSms = (req, res) => {
   console.log('Model: sendSMS');
-  const { comunity, proyectName } = req.body.data;
+  const { comunity, proyectName, statusProyect, typeProyect } = req.body.data;
 
-  comunity.forEach(({ phone, nameComunity, dateR, hourR, lang, statusProyect, typeProyect }) => {
+  comunity.forEach(({ phone, nameComunity, dateR, hourR, lang }) => {
 
     const language = require(`../sms-lang/${lang.toLowerCase()}`);
 
