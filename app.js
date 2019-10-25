@@ -42,7 +42,7 @@ sendSms.addEventListener('click', ()=>{
 //statusProyect: 1 //1, 2, 3
 //id
 
-//fetch('https://amda-amazon.herokuapp.com/add-proyect', {
+//fetch('https://amda-amazon.herokuapp.com/update-proyect', {
   //  method: 'POST',
     //headers: {
       //'Content-Type': 'application/json'
@@ -59,9 +59,8 @@ sendSms.addEventListener('click', ()=>{
           //  lang: 'es'
           //}
         //],
-        //proyectName: 'TIA MARIA',
-        //typeProyect: '', //farming, electricity, hydrocarbons, mining, transport
-        //statusProyect: 1 //1, 2, 3
+        //id: id del proyecto
+        //statusProyect: 1 //1, 2, 3 
       //}
     //})
   //}).then(res => console.log(res))

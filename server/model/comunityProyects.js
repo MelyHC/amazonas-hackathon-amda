@@ -8,13 +8,13 @@ const addProyect = (req, res) => {
   console.log('Model: addProyect');
   const { comunity, proyectName, typeProyect, statusProyect } = req.body.data;
 
-  comunity = comunity.map(comu => {
-    const date = new Date();
-    const name = comu.nameComunity.toLowerCase();
-    const id = `${name.split(' ').join('')}${date}`
+  //comunity = comunity.map(comu => {
+    //const date = new Date();
+    //const name = comu.nameComunity.toLowerCase();
+    //const id = `${name.split(' ').join('')}${date}`;
 
-    return { ...comu, id }
-  })
+    //return { ...comu, id }
+  //})
 
   db.collection('proyects').add({
     proyectName,
@@ -58,7 +58,7 @@ const pullProyect = (req, res) => {
 const updateProyect = (req, res) => {
   console.log('Model: updateProyect');
 
-  const { id, comunity } = req.body.data;
+  const { id, comunity, statusProyect } = req.body.data;
 
   db.collection('proyects').doc(`${id}`).update({
     comunity,
