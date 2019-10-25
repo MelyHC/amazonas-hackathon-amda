@@ -29,6 +29,7 @@ const issuesoption = {
 app.use(express.static(__dirname));
 app.use(json());
 app.use(urlencoded({ extended: false }));
+app.use(express.static('public'));
 
 app.use(cors(corsOptions));
 app.options('*', cors(issuesoption));
@@ -42,8 +43,8 @@ server.listen(port, () => {
 app.post('/sms', (req, res) => {
   console.log('correcto');
   console.log(req.body.Body, req.body.From);
-  res.writeHead(200);
-  res.end();
+  io.emit('recived-message', { data: req.body.Body, from: req.body.From });
+  res.sendStatus(200);
 });
 
 app.post('/send-sms', send_message);
@@ -55,7 +56,15 @@ app.post('/update-proyect', update_proyect);
 app.post('/add-comunity', add_comunity);
 app.get('/pull-comunity', pull_comunity);
 
-io.on('connection', () => {
+io.on('connection', socket => {
   console.log('sms conectado');
+  //Here we listen on a new namespace called "incoming data"
+  socket.on("recived-message", (data) => {
+    //Here we broadcast it out to all other sockets EXCLUDING the socket which sent us the data
+    socket.broadcast.emit("recived-sms", data);
+  });
+
+  //A special namespace "disconnect" for when a client disconnects
+  socket.on("disconnect", () => console.log("Client disconnected"));
 })
 

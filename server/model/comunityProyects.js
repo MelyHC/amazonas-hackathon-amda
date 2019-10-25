@@ -61,7 +61,8 @@ const updateProyect = (req, res) => {
   const { id, comunity } = req.body.data;
 
   db.collection('proyects').doc(`${id}`).update({
-    comunity
+    comunity,
+    date: FieldValue.serverTimestamp()
   }).then(() => {
 
     const resp = Response(0, 'Proyectos actualizados', []);
