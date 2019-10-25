@@ -11,7 +11,8 @@ const fs = require('fs');
 const path = require('path');
 
 const { send_message } = require('./controller/send_message');
-const { add_proyect, pull_proyect } = require('./controller/comunity_proyects');
+const { add_proyect, pull_proyect, update_proyect } = require('./controller/comunity_proyects');
+const { add_comunity, pull_comunity } = require('./controller/user_comunity');
 
 const corsOptions = {
   origin: allowedOrigins
@@ -49,6 +50,10 @@ app.post('/send-sms', send_message);
 
 app.post('/add-proyect', add_proyect);
 app.get('/pull-proyect', pull_proyect);
+app.post('/update-proyect', update_proyect);
+
+app.post('/add-comunity', add_comunity);
+app.get('/pull-comunity', pull_comunity);
 
 io.on('connection', () => {
   console.log('sms conectado');
