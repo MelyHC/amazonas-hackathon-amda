@@ -7,7 +7,7 @@ const language = {
   participation: 'Participa en',
   date: 'Fecha',
   hour: 'Hora',
-  place: 'Lugar:',
+  place: 'Lugar: Local comunal',
   farming: 'Agricultura',
   electricity: 'Electricidad',
   hydrocarbons: 'Hidrocarburos',
@@ -15,7 +15,8 @@ const language = {
   transport: 'Transporte',
   sector: 'Sector:',
   proyect: 'Proyecto:',
-  return: 'Para responder envie un mensaje al numero'
+  return: 'Para responder envie un mensaje al numero',
+  hello: 'Saludos'
 }
 
 

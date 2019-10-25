@@ -21,8 +21,8 @@ const sendSms = (req, res) => {
   ${language.participation} ${language[`${statusProyect}`]} ${language.taller}
   ${language.proyect} ${proyectName}
   ${language.sector} ${language[`${typeProyect}`]}
-  ${language.place} ${nameComunity}
-  ${language.return} ${PHONE}`
+  ${language.place}
+  ${language.hello}`
     }).then(message => {
       console.log(message)
     });
