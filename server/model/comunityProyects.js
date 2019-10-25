@@ -43,4 +43,18 @@ const addProyect = (req, res) => {
   })
 }
 
+const pullProyect = (req, res) => {
+
+  db.collection('proyects').get()
+    .then((snapshot) => {
+      snapshot.forEach((doc) => {
+        console.log(doc.id, '=>', doc.data());
+      });
+    })
+    .catch((err) => {
+      console.log('Error getting documents', err);
+    });
+
+}
 module.exports.addProyect = addProyect;
+module.exports.pullProyect = pullProyect;

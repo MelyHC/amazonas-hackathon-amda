@@ -1,7 +1,7 @@
 const sendSms = document.getElementById('send-sms');
 
 sendSms.addEventListener('click', ()=>{
-  fetch('https://amda-amazon.herokuapp.com/send-sms', {
+  fetch('https://amda-amazon.herokuapp.com/add-proyect', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -17,10 +17,10 @@ sendSms.addEventListener('click', ()=>{
             dateR: '20-10-2019',
             hourR: '6 p.m.',
             lang: 'es',
-            proyectName: 'TIA MARIA',
             motive: 'first'
           }
-        ]
+        ],
+        proyectName: 'TIA MARIA'
       }
     })
   }).then(res => console.log(res))

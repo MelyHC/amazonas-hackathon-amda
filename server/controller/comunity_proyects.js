@@ -1,5 +1,5 @@
 const Response = require('../res-message');
-const { addProyect } = require('../model/comunityProyects');
+const { addProyect, pullProyect } = require('../model/comunityProyects');
 
 const validate_data = (req, res, callback) => {
   console.log('Controller: validate_data');
@@ -29,5 +29,11 @@ const add_proyect = (req, res) => {
   validate_data(req, res, addProyect)
 }
 
+const pull_proyect = (req, res) => {
+  console.log('Controller: pull_proyect');
+  pullProyect(req, res);
+}
+
 module.exports.add_proyect = add_proyect;
 module.exports.validate_data = validate_data;
+module.exports.pull_proyect = pull_proyect;
