@@ -9,7 +9,7 @@ const language = {
   hour: 'Hora',
   place: 'Lugar:',
   farming: 'Agricultura',
-  lectricity: 'Electricidad',
+  electricity: 'Electricidad',
   hydrocarbons: 'Hidrocarburos',
   mining: 'Mineria',
   transport: 'Transporte',
