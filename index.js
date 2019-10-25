@@ -111,7 +111,6 @@ fetch('./data.json')
  myJson.forEach(function(item,i){
     countries[i]=item.Nombre+", "+ item.Ubicación;
     });
-    console.log(countries);
   });
 
 
@@ -125,16 +124,7 @@ const btn = document.getElementById('btnInput')
 const input = document.getElementById('myInput')
 const comuinput = document.getElementById('comuInput')
 
-// btn.addEventListener( 'click' , () => {
-
-//         firebase.database().ref('proyecto/' + userId).set({
-//          comunidad: btn.value,
-//          proyecto: comuinput.value,
-//     })
-
-// } )
-
-
+git git 
       const inputText = document.getElementById("input-text");
       const btnText = document.getElementById("btnText");
       const newSub= document.getElementById("newSubTitle");
@@ -147,14 +137,25 @@ const comuinput = document.getElementById('comuInput')
       btnText.addEventListener("click", () => agregarCard(inputText.value, name_comunidad.value, inputFecha.value, inputHora.value));
 
       const agregarCard = (inputString, inputComun, inputFecha, inputHora)  => {
-        console.log(name_comunidad.value);
+    
+          var card = document.createElement('DIV')
+          card.setAttribute('class', "card")
+          var span1 = document.createElement ( 'p')
+          span1.setAttribute('class','comunidad')
+          var span2 = document.createElement ( 'p')
+          span2.setAttribute('class', "fecha")
+          var span3 = document.createElement ( 'p')
+          span3.setAttribute('class', "hora")
+      
+          span1.innerHTML =  `${inputComun}`
+          span2.innerHTML = `Fecha: ${inputFecha}`
+          span3.innerHTML = `Hora: ${inputHora}`
+          namecard.appendChild(card);
+          card.appendChild( span1);
+          card.appendChild( span2);
+          card.appendChild( span3);
 
-          console.log(inputComun);
-          namecard.innerHTML= ` <div class="card" ><br>
-          <span class="comunidad">${inputComun}</span> <br><span class="hab">440 Hab</span><br>Fecha:${inputFecha}
-            <br>Hora:${inputHora}</div>}`;  
-       newSub.innerHTML="COMUNIDADES INVOLUCRADAS " + inputString;
-       
+
 
       };
 
