@@ -10,7 +10,9 @@ const { urlencoded, json } = require('body-parser');
 const fs = require('fs');
 const path = require('path');
 
-const { send_message } = require('./controller/send_message.js');
+const { send_message } = require('./controller/send_message');
+const { add_proyect, pull_proyect, update_proyect } = require('./controller/comunity_proyects');
+const { add_comunity, pull_comunity } = require('./controller/user_comunity');
 
 const corsOptions = {
   origin: allowedOrigins
@@ -27,6 +29,7 @@ const issuesoption = {
 app.use(express.static(__dirname));
 app.use(json());
 app.use(urlencoded({ extended: false }));
+app.use(express.static('public'));
 
 app.use(cors(corsOptions));
 app.options('*', cors(issuesoption));
@@ -40,13 +43,28 @@ server.listen(port, () => {
 app.post('/sms', (req, res) => {
   console.log('correcto');
   console.log(req.body.Body, req.body.From);
-  res.writeHead(200);
-  res.end();
+  io.emit('recived-message', { data: req.body.Body, from: req.body.From });
+  res.sendStatus(200);
 });
 
 app.post('/send-sms', send_message);
 
-io.on('connection', () => {
+app.post('/add-proyect', add_proyect);
+app.get('/pull-proyect', pull_proyect);
+app.post('/update-proyect', update_proyect);
+
+app.post('/add-comunity', add_comunity);
+app.get('/pull-comunity', pull_comunity);
+
+io.on('connection', socket => {
   console.log('sms conectado');
+  //Here we listen on a new namespace called "incoming data"
+  socket.on("recived-message", (data) => {
+    //Here we broadcast it out to all other sockets EXCLUDING the socket which sent us the data
+    socket.broadcast.emit("recived-sms", data);
+  });
+
+  //A special namespace "disconnect" for when a client disconnects
+  socket.on("disconnect", () => console.log("Client disconnected"));
 })
 

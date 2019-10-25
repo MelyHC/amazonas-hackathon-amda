@@ -8,24 +8,31 @@ const client = new twilio(TWILIO_KEY, TWILIO_PASS);
 
 const sendSms = (req, res) => {
   console.log('Model: sendSMS');
-  const comunity = req.body.data.comunity;
+  const { comunity, proyectName } = req.body.data;
 
-  comunity.forEach(({ phone, nameComunity, dateR, hourR, lang, proyectName, motive }) => {
+  comunity.forEach(({ phone, nameComunity, dateR, hourR, lang, statusProyect, typeProyect }) => {
 
     const language = require(`../sms-lang/${lang.toLowerCase()}`);
 
     client.messages.create({
       to: `${prefix}${phone}`,
       from: PHONE,
-      body: `${language[`${motive}`]}
-  ${language.date}: ${dateR}
-  ${language.hour}: ${hourR}
-  ${language.place} ${nameComunity}
+      body: `${language.today} ${dateR} (${hourR})
+  ${language.participation} ${language[`${statusProyect}`]} ${language.taller}
   ${language.proyect} ${proyectName}
+  ${language.sector} ${language[`${typeProyect}`]}
+  ${language.place} ${nameComunity}
   ${language.return} ${PHONE}`
     }).then(message => {
       console.log(message)
     });
+
+//    este 25 de Octubre (3:00pm)*
+// Participa en el 1er Taller 
+// Proyecto:  Nombre del Proyecto 
+// Sector: [sector que pertenece]
+// lUGAR: [comunidad]
+// si desea comunicarse lla al ....
   });
   const resp = Response(0, 'Se envio correctamente el mensaje', []);
   res.send(JSON.stringify(resp));
