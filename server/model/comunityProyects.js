@@ -11,7 +11,7 @@ const addProyect = (req, res) => {
   comunity = comunity.map(comu => {
     const date = new Date();
     const name = comu.nameComunity.toLowerCase();
-    const id = `${name.spit(' ').join('')}${date}`
+    const id = `${name.split(' ').join('')}${date}`
 
     return { ...comu, id }
   })
