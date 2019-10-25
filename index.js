@@ -133,7 +133,7 @@ const comuinput = document.getElementById('comuInput')
       const inputFecha = document.getElementById("input_fecha");
       const inputHora = document.getElementById("input_hora");
 
-
+const comunity = []
       btnText.addEventListener("click", () => agregarCard(inputText.value, name_comunidad.value, inputFecha.value, inputHora.value));
 
       const agregarCard = (inputString, inputComun, inputFecha, inputHora)  => {
@@ -156,7 +156,13 @@ const comuinput = document.getElementById('comuInput')
           card.appendChild( span3);
 
 
-
+comunity.push({
+    phone: 923003956,
+    nameComunity:inputComun,
+    dateR: inputFecha,
+    hourR: inputHora,
+    lang: 'es'
+  })
       };
 
       const sumCard = ()=>{
